@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fauna de México - Inicio de Sesión</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background:url('descarga.webp');
+    }
+    #login, #contenido {
+      background: rgb(241, 230, 182);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: none;
+    }
+    #login {
+      display: block;
+    }
+    h2 {
+      text-align: center;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      size-adjust: 25px;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    input[type="button"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #96c9f3;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="button"]:hover {
+      background-color: #3a48de;
+    }
+  </style>
+</head>
+<body>
+
+<div id="login">
+  <h2>Inicio de Sesión</h2>
+  <label for="usuario">Usuario:</label>
+  <input type="text" id="usuario" placeholder="Ingresa el usuario">
+  
+  <label for="contraseña">Contraseña:</label>
+  <input type="password" id="contraseña" placeholder="Ingresa la contraseña">
+  
+  <input type="button" value="Ingresar" onclick="verificarLogin()">
+  <p id="mensaje" style="color: red;"></p>
+</div>
+
+<div id="contenido">
+  
+  
+    <h2>Fauna de México</h2>
+  <p><h2>éxico es uno de los países con mayor biodiversidad en el mundo. Algunos animales representativos son:</p></h2>
+  <ul>
+    <li><strong>Jaguar:</strong> El felino más grande de América.</li>
+    <img src="imagen.webp" alt="">
+    <li><strong>Águila Real:</strong> Símbolo nacional de México.</li>
+    <img src="OIP.webp" alt="">
+    <li><strong>Ajolote:</strong> Anfibio endémico del Valle de México.</li>
+    <img src="ajol.webp" alt="">
+    <li><strong>Vaquita Marina:</strong> Cetáceo en peligro crítico de extinción.</li>
+    <img src="descarga (1).webp" alt="">
+    <li><strong>Tortuga Caguama:</strong> Reptil marino protegido en costas mexicanas.</li>
+    <img src="totu.webp" alt="">
+  </ul>
+</div>
+
+<script>
+  function verificarLogin() {
+    const usuario = document.getElementById('usuario').value;
+    const contraseña = document.getElementById('contraseña').value;
+    const mensaje = document.getElementById('mensaje');
+
+    if (usuario === 'CECYTEM' && contraseña === '123456') {
+      document.getElementById('login').style.display = 'none';
+      document.getElementById('contenido').style.display = 'block';
+    } else {
+      mensaje.textContent = 'Usuario o contraseña incorrectos.';
+    }
+  }
+</script>
+
+</body>
+</html>
